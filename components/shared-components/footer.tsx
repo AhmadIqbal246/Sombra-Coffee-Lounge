@@ -5,7 +5,7 @@ const footerLinks = [
   { label: "Home", href: "/" },
   { label: "Coffee Menu", href: "/menu" },
   { label: "Philosophy", href: "/#why-choose-us" },
-  { label: "Reserve Table", href: "/#booking" },
+  { label: "Reserve Table", href: "/booking" },
 ];
 
 interface FooterProps {

@@ -3,6 +3,8 @@
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 
+const INTRO_SESSION_KEY = "sombra_intro_completed";
+
 interface CinematicIntroOverlayProps {
   onIntroComplete?: () => void;
 }
@@ -10,27 +12,44 @@ interface CinematicIntroOverlayProps {
 export function CinematicIntroOverlay({ onIntroComplete }: CinematicIntroOverlayProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-  const hasRunRef = useRef(false);
-  const hasCalledCompleteRef = useRef(false);
   const onIntroCompleteRef = useRef(onIntroComplete);
   onIntroCompleteRef.current = onIntroComplete;
-  const [isComplete, setIsComplete] = useState(false);
+  const [isComplete, setIsComplete] = useState(() => {
+    if (typeof window !== "undefined") {
+      try {
+        return sessionStorage.getItem(INTRO_SESSION_KEY) === "true";
+      } catch {
+        return false;
+      }
+    }
+    return false;
+  });
 
   useEffect(() => {
-    if (hasRunRef.current) return;
-    hasRunRef.current = true;
+    if (typeof window !== "undefined") {
+      try {
+        if (sessionStorage.getItem(INTRO_SESSION_KEY) === "true") {
+          setIsComplete(true);
+          onIntroCompleteRef.current?.();
+          return;
+        }
+      } catch {}
+    }
     const canvas = canvasRef.current;
     const container = containerRef.current;
     if (!canvas || !container) return;
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduceMotion) {
+    const finishIntro = () => {
+      try {
+        sessionStorage.setItem(INTRO_SESSION_KEY, "true");
+      } catch {}
       setIsComplete(true);
-      if (onIntroCompleteRef.current && !hasCalledCompleteRef.current) {
-        hasCalledCompleteRef.current = true;
-        onIntroCompleteRef.current();
-      }
+      onIntroCompleteRef.current?.();
+    };
+    if (reduceMotion) {
+      finishIntro();
       return;
     }
     let animationFrameId: number;
@@ -45,7 +64,7 @@ export function CinematicIntroOverlay({ onIntroComplete }: CinematicIntroOverlay
     const targetScale = Math.max(1600, Math.ceil(1600 * (window.innerHeight / Math.max(window.innerWidth, 1))));
     const tl = gsap.timeline({
       onComplete: () => {
-        setIsComplete(true);
+        finishIntro();
         cancelAnimationFrame(animationFrameId);
         window.removeEventListener("resize", resize);
       },
@@ -66,11 +85,14 @@ export function CinematicIntroOverlay({ onIntroComplete }: CinematicIntroOverlay
         "-=0.35",
       )
       .call(() => {
-        if (onIntroCompleteRef.current && !hasCalledCompleteRef.current) {
-          hasCalledCompleteRef.current = true;
-          onIntroCompleteRef.current();
-        }
+        onIntroCompleteRef.current?.();
       }, [], "-=0.2");
+    const fallbackTimer = setTimeout(() => {
+      finishIntro();
+      cancelAnimationFrame(animationFrameId);
+      window.removeEventListener("resize", resize);
+      tl.kill();
+    }, 2600);
     const getFontString = (size: number) =>
       `900 ${size}px "Manrope", "Bodoni Moda", system-ui, -apple-system, sans-serif`;
     const render = () => {
@@ -149,6 +171,7 @@ export function CinematicIntroOverlay({ onIntroComplete }: CinematicIntroOverlay
     };
     render();
     return () => {
+      clearTimeout(fallbackTimer);
       window.removeEventListener("resize", resize);
       cancelAnimationFrame(animationFrameId);
       tl.kill();
@@ -160,7 +183,14 @@ export function CinematicIntroOverlay({ onIntroComplete }: CinematicIntroOverlay
   return (
     <div
       ref={containerRef}
-      className="fixed inset-0 z-[200] pointer-events-none overflow-hidden bg-transparent"
+      className="fixed inset-0 z-[200] pointer-events-auto cursor-pointer overflow-hidden bg-transparent"
+      onClick={() => {
+        try {
+          sessionStorage.setItem(INTRO_SESSION_KEY, "true");
+        } catch {}
+        setIsComplete(true);
+        onIntroCompleteRef.current?.();
+      }}
     >
       <canvas
         ref={canvasRef}

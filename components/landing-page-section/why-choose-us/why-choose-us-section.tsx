@@ -1,43 +1,31 @@
 "use client";
 
 import { SectionHeading } from "@/components/shared-components/section-heading";
-import { ScrollStack } from "@/components/shared-components/scroll-stack/scroll-stack";
-import { ScrollStackItem } from "@/components/shared-components/scroll-stack/scroll-stack-item";
 import { benefits } from "@/lib/data/benefits";
 import { BenefitStackCard } from "./benefit-stack-card";
 
 export function WhyChooseUsSection() {
   return (
-    <section id="why-choose-us" className="relative bg-transparent">
-      <div className="px-6 pt-4 md:px-12 md:pt-8 lg:px-16">
-        <div className="mx-auto mb-4 flex max-w-2xl justify-center md:mb-6">
-          <SectionHeading
-            tone="cinematic"
-            title="The Sombra Artisanal Philosophy"
-            description="Elevating daily ritual into sensory art through micro-lot shade cultivation, infrared roasting, and curated lounge comfort."
-            align="center"
-            className="mb-0"
-          />
-        </div>
+    <section id="why-choose-us" className="scroll-mt-24 px-4 py-12 sm:px-6 sm:py-16 lg:px-8 max-w-7xl mx-auto">
+      <div className="mx-auto mb-8 max-w-2xl text-center sm:mb-12">
+        <SectionHeading
+          tone="cinematic"
+          title="The Sombra Artisanal Philosophy"
+          description="Elevating daily ritual into sensory art through micro-lot shade cultivation, infrared roasting, and curated lounge comfort."
+          align="center"
+          className="mb-0"
+        />
       </div>
-      <ScrollStack
-        itemDistance={120}
-        itemStackDistance={30}
-        baseScale={0.92}
-        itemScale={0.025}
-        stackPosition="20%"
-        scaleEndPosition="10%"
-        blurAmount={0}
-      >
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
         {benefits.map((benefit, index) => (
-          <ScrollStackItem
+          <div
             key={benefit.id}
-            itemClassName="my-4 md:my-6 overflow-hidden rounded-[40px] border border-[color:var(--color-line)] bg-surface shadow-[0_24px_64px_rgba(26,26,28,0.08),inset_0_1px_0_rgba(255,255,255,0.9)]"
+            className="overflow-hidden rounded-[32px] border border-[color:var(--color-line)] bg-surface shadow-sm transition-all duration-300 hover:border-champagne/60 hover:shadow-lg"
           >
             <BenefitStackCard benefit={benefit} index={index} />
-          </ScrollStackItem>
+          </div>
         ))}
-      </ScrollStack>
+      </div>
     </section>
   );
 }

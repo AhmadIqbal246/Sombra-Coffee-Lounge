@@ -28,7 +28,7 @@ export function AiVoiceBookingWidget() {
   };
 
   return (
-    <section id="booking" className="py-10 sm:py-14 lg:py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-8 sm:space-y-10">
+    <section id="booking" className="scroll-mt-28 py-10 sm:py-14 lg:py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-8 sm:space-y-10">
       <div className="text-center space-y-4 max-w-3xl mx-auto">
         <h2 className="font-display text-3xl sm:text-5xl font-semibold tracking-tight text-text">
           Reserve Your Lounge Table & Tasting

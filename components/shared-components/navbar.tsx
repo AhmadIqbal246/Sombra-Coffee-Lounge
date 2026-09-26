@@ -7,7 +7,7 @@ const navLinks = [
   { label: "Home", href: "/" },
   { label: "Coffee Menu", href: "/menu" },
   { label: "Philosophy", href: "/#why-choose-us" },
-  { label: "Reserve Table", href: "/#booking" },
+  { label: "Reserve Table", href: "/booking" },
 ];
 
 interface NavbarProps {
@@ -46,7 +46,7 @@ export function Navbar({ variant = "default" }: NavbarProps) {
           </ul>
           <div className="flex items-center gap-3">
             <Link
-              href="#booking"
+              href="/booking"
               className="hidden cursor-pointer rounded-lg bg-accent px-6 py-2 text-sm font-semibold text-white transition-colors hover:bg-jet lg:inline-flex shadow"
             >
               Reserve Table
@@ -86,7 +86,7 @@ export function Navbar({ variant = "default" }: NavbarProps) {
               ))}
             </ul>
             <Link
-              href="#booking"
+              href="/booking"
               onClick={closeMenu}
               className="mt-3 block cursor-pointer rounded-lg bg-accent px-4 py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-jet shadow"
             >

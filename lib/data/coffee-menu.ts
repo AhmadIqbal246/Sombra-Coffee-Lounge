@@ -104,7 +104,7 @@ export const coffeeMenuItems: MenuItem[] = [
     notes: ["Dulce de Leche", "Brown Sugar", "Velvety Crema"],
     price: "$6.00",
     description: "Equal proportions of precision extracted double espresso and warm silky milk steamed to 60 degrees Celsius.",
-    image: "https://images.unsplash.com/photo-1585494156145-1c60a4fe9d2b?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1517256064527-09c73fc73e38?w=800&q=80",
   },
   {
     id: "esp-3",

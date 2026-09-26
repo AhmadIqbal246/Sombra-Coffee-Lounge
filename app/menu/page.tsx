@@ -137,7 +137,7 @@ export default function MenuPage() {
             </p>
             <div className="mt-6 flex flex-wrap justify-center gap-4">
               <Link
-                href="/#booking"
+                href="/booking"
                 className="cursor-pointer rounded-xl bg-accent px-7 py-3 text-sm font-semibold text-white shadow-md transition-all hover:bg-jet hover:shadow-lg"
               >
                 Reserve Lounge Table

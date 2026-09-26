@@ -63,24 +63,76 @@ export function CoffeeMenuSection() {
           ))}
         </div>
 
-        <div data-reveal className="mt-8 text-center sm:mt-10">
-          <div className="inline-flex flex-col items-center gap-3 rounded-2xl border border-[color:var(--color-line)] bg-surface/80 p-5 backdrop-blur-sm sm:flex-row sm:gap-6 sm:px-8 sm:py-4">
-            <p className="text-xs text-muted sm:text-sm">
-              All beans roasted in-house in small batches. Whole bean bags available to take home.
-            </p>
-            <div className="flex items-center gap-4">
-              <Link
-                href="/menu"
-                className="cursor-pointer rounded-xl bg-jet px-5 py-2 text-xs font-semibold text-white shadow-sm transition-all hover:bg-accent sm:text-sm"
-              >
-                Full Menu Page
-              </Link>
-              <Link
-                href="#booking"
-                className="cursor-pointer text-xs font-semibold text-accent underline underline-offset-4 transition-colors hover:text-jet sm:text-sm"
-              >
-                Reserve Table for Tasting
-              </Link>
+        <div data-reveal className="mt-12 sm:mt-16">
+          <div className="relative overflow-hidden rounded-3xl border border-champagne/30 bg-gradient-to-br from-surface via-surface-raised to-surface p-7 shadow-lg sm:p-10 lg:p-12">
+            <div className="pointer-events-none absolute -right-16 -top-16 h-60 w-60 rounded-full bg-champagne/15 blur-3xl" />
+            <div className="pointer-events-none absolute -left-16 -bottom-16 h-60 w-60 rounded-full bg-accent/10 blur-3xl" />
+            <div className="relative z-10 flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+              <div className="max-w-2xl text-left">
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-champagne/40 bg-champagne/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-accent">
+                  Curated Cellar & Roastery
+                </span>
+                <h3 className="mt-3 font-cinzel text-2xl font-bold tracking-tight text-text sm:text-3xl lg:text-4xl">
+                  Discover Our Full Artisanal Menu
+                </h3>
+                <p className="mt-2.5 text-sm leading-relaxed text-muted sm:text-base">
+                  Explore rare micro-lot single-origins, precision espresso flights, and house-made viennoiserie, or reserve an intimate table for a sommelier-guided tasting.
+                </p>
+              </div>
+              <div className="flex flex-col gap-3 sm:flex-row sm:items-center lg:shrink-0">
+                <Link
+                  href="/menu"
+                  className="group inline-flex items-center justify-center gap-2.5 rounded-xl bg-jet px-6 py-3.5 text-sm font-semibold text-white shadow-md transition-all duration-300 hover:bg-accent hover:shadow-xl sm:px-7"
+                >
+                  <span>Explore Full Menu</span>
+                  <svg
+                    className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="2.2"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+                    />
+                  </svg>
+                </Link>
+                <Link
+                  href="/booking"
+                  className="group inline-flex items-center justify-center gap-2 rounded-xl border border-[color:var(--color-line)] bg-surface px-6 py-3.5 text-sm font-semibold text-text shadow-sm transition-all duration-300 hover:border-champagne/60 hover:bg-surface-raised sm:px-7"
+                >
+                  <svg
+                    className="h-4 w-4 text-accent"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="2"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5"
+                    />
+                  </svg>
+                  <span>Reserve Tasting Table</span>
+                </Link>
+              </div>
+            </div>
+            <div className="relative z-10 mt-8 flex flex-wrap items-center gap-y-2 gap-x-6 border-t border-[color:var(--color-line)] pt-5 text-xs text-muted">
+              <span className="inline-flex items-center gap-2">
+                <span className="h-1.5 w-1.5 rounded-full bg-champagne" />
+                In-house small-batch roasting
+              </span>
+              <span className="inline-flex items-center gap-2">
+                <span className="h-1.5 w-1.5 rounded-full bg-champagne" />
+                Whole bean bags to take home
+              </span>
+              <span className="inline-flex items-center gap-2">
+                <span className="h-1.5 w-1.5 rounded-full bg-champagne" />
+                Daily scratch pastry pairings
+              </span>
             </div>
           </div>
         </div>

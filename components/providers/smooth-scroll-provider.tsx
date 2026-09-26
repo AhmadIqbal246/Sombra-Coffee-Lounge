@@ -33,7 +33,19 @@ export function SmoothScrollProvider({ children }: SmoothScrollProviderProps) {
     };
     gsap.ticker.add(tickerCallback);
     gsap.ticker.lagSmoothing(0);
+    const handleHash = () => {
+      if (window.location.hash) {
+        const target = document.querySelector(window.location.hash) as HTMLElement | null;
+        if (target) {
+          lenis.scrollTo(target, { offset: -90, duration: 1.1 });
+        }
+      }
+    };
+    window.addEventListener("hashchange", handleHash);
+    const hashTimer = setTimeout(handleHash, 250);
     return () => {
+      clearTimeout(hashTimer);
+      window.removeEventListener("hashchange", handleHash);
       gsap.ticker.remove(tickerCallback);
       lenis.destroy();
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());

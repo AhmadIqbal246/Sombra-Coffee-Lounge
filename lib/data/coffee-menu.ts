@@ -19,7 +19,7 @@ export const coffeeMenuItems: MenuItem[] = [
     price: "$14.00",
     badge: "Reserve Lot",
     description: "An extraordinary heirloom cup celebrated worldwide for explosive floral aromatics and lingering silky sweetness.",
-    image: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=800&q=80",
+    image: "/images/menu/photo-1514432324607-a09d9b4aefdd.jpg",
   },
   {
     id: "po-2",
@@ -32,7 +32,7 @@ export const coffeeMenuItems: MenuItem[] = [
     price: "$10.50",
     badge: "Staff Favorite",
     description: "Complex tropical fruit notes and vibrant lactic sweetness harvested from high-elevation shade groves.",
-    image: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80",
+    image: "/images/menu/photo-1495474472287-4d71bcdd2085.jpg",
   },
   {
     id: "po-3",
@@ -45,7 +45,7 @@ export const coffeeMenuItems: MenuItem[] = [
     price: "$9.50",
     badge: "Micro-Lot",
     description: "Delicate, tea-like body with pristine clarity and fragrant floral notes characteristic of heritage Ethiopian varietals.",
-    image: "https://images.unsplash.com/photo-1498804103079-a6351b050096?w=800&q=80",
+    image: "/images/menu/photo-1498804103079-a6351b050096.jpg",
   },
   {
     id: "po-4",
@@ -57,7 +57,7 @@ export const coffeeMenuItems: MenuItem[] = [
     notes: ["Candied Pecan", "Honeycrisp Apple", "Milk Chocolate", "Toffee"],
     price: "$8.50",
     description: "Volcanic loam terroir producing a remarkably balanced, medium-bodied cup with comforting pastry sweetness.",
-    image: "https://images.unsplash.com/photo-1511920170033-f8396924c348?w=800&q=80",
+    image: "/images/menu/photo-1511920170033-f8396924c348.jpg",
   },
   {
     id: "po-5",
@@ -70,7 +70,7 @@ export const coffeeMenuItems: MenuItem[] = [
     price: "$12.50",
     badge: "Limited Micro-Lot",
     description: "Sun-drenched honey process yielding intense florals and silky marmalade sweetness from high volcanic slopes.",
-    image: "https://images.unsplash.com/photo-1518832553480-cd0e625ed3e6?w=800&q=80",
+    image: "/images/menu/photo-1518832553480-cd0e625ed3e6.jpg",
   },
   {
     id: "po-6",
@@ -83,7 +83,7 @@ export const coffeeMenuItems: MenuItem[] = [
     price: "$11.00",
     badge: "High Acidity",
     description: "Rare spherical peaberry beans with electrifying phosphoric vibrancy and concentrated berry juiciness.",
-    image: "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=800&q=80",
+    image: "/images/menu/photo-1541167760496-1628856ab772.jpg",
   },
   {
     id: "esp-1",
@@ -94,7 +94,7 @@ export const coffeeMenuItems: MenuItem[] = [
     price: "$5.50",
     badge: "House Classic",
     description: "A tight 1:1.8 brew ratio extraction delivering dense, heavy mouthfeel and zero harsh bitterness.",
-    image: "https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?w=800&q=80",
+    image: "/images/menu/photo-1510591509098-f4fdc6d0ff04.jpg",
   },
   {
     id: "esp-2",
@@ -104,7 +104,7 @@ export const coffeeMenuItems: MenuItem[] = [
     notes: ["Dulce de Leche", "Brown Sugar", "Velvety Crema"],
     price: "$6.00",
     description: "Equal proportions of precision extracted double espresso and warm silky milk steamed to 60 degrees Celsius.",
-    image: "https://images.unsplash.com/photo-1517256064527-09c73fc73e38?w=800&q=80",
+    image: "/images/menu/photo-1517256064527-09c73fc73e38.jpg",
   },
   {
     id: "esp-3",
@@ -115,7 +115,7 @@ export const coffeeMenuItems: MenuItem[] = [
     price: "$7.50",
     badge: "Signature",
     description: "Freshly ground organic cardamom infused into a velvety micro-foam with pure Vermont maple essence.",
-    image: "https://images.unsplash.com/photo-1534778101976-62847782c213?w=800&q=80",
+    image: "/images/menu/photo-1534778101976-62847782c213.jpg",
   },
   {
     id: "esp-4",
@@ -125,7 +125,7 @@ export const coffeeMenuItems: MenuItem[] = [
     notes: ["Toasted Oats", "Milk Chocolate", "Apricot"],
     price: "$6.50",
     description: "Two ristretto shots integrated into micro-foamed Swedish organic oat milk with a glossy, glass-like finish.",
-    image: "https://images.unsplash.com/photo-1577968897966-3d4325b36b61?w=800&q=80",
+    image: "/images/menu/photo-1577968897966-3d4325b36b61.jpg",
   },
   {
     id: "esp-5",
@@ -136,7 +136,7 @@ export const coffeeMenuItems: MenuItem[] = [
     price: "$8.00",
     badge: "Dessert Pairing",
     description: "A hot double ristretto poured tableside over artisanal organic vanilla bean gelato with cacao shavings.",
-    image: "https://images.unsplash.com/photo-1579992357154-faf4bde95b3d?w=800&q=80",
+    image: "/images/menu/photo-1579992357154-faf4bde95b3d.jpg",
   },
   {
     id: "esp-6",
@@ -146,7 +146,7 @@ export const coffeeMenuItems: MenuItem[] = [
     notes: ["Spiced Demerara", "Orange Zest", "Velvet Foam"],
     price: "$7.00",
     description: "Double espresso shaken vigorously over ice with organic raw demerara and expressed orange oils.",
-    image: "https://images.unsplash.com/photo-1517256064527-09c73fc73e38?w=800&q=80",
+    image: "/images/menu/photo-1517256064527-09c73fc73e38.jpg",
   },
   {
     id: "cd-1",
@@ -159,7 +159,7 @@ export const coffeeMenuItems: MenuItem[] = [
     price: "$9.00",
     badge: "Limited Daily Yield",
     description: "Crafted drop-by-drop over twelve hours in Japanese architectural glass towers for maximum smoothness and zero tannin.",
-    image: "https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?w=800&q=80",
+    image: "/images/menu/photo-1517701550927-30cf4ba1dba5.jpg",
   },
   {
     id: "cd-2",
@@ -169,7 +169,7 @@ export const coffeeMenuItems: MenuItem[] = [
     notes: ["Dried Hibiscus", "Rose Hip", "Sparkling Citrus", "Tamarind"],
     price: "$8.00",
     description: "Brewed organic sun-dried coffee cherry husks paired with artisanal sparkling tonic and dehydrated blood orange.",
-    image: "https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=800&q=80",
+    image: "/images/menu/photo-1551024709-8f23befc6f87.jpg",
   },
   {
     id: "cd-3",
@@ -180,7 +180,7 @@ export const coffeeMenuItems: MenuItem[] = [
     price: "$8.50",
     badge: "Lounge Favorite",
     description: "Concentrated cold extraction blended with single-origin melted dark chocolate and finished with hand-harvested smoked salt.",
-    image: "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=800&q=80",
+    image: "/images/menu/photo-1572442388796-11668a67e53d.jpg",
   },
   {
     id: "cd-4",
@@ -190,7 +190,7 @@ export const coffeeMenuItems: MenuItem[] = [
     notes: ["Creamy Stout Crema", "Molasses", "Dark Berry"],
     price: "$7.50",
     description: "Chilled single-origin cold brew charged with pure nitrogen and served on tap with a mesmerizing cascading head.",
-    image: "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=800&q=80",
+    image: "/images/menu/photo-1461023058943-07fcbe16d735.jpg",
   },
   {
     id: "cd-5",
@@ -201,7 +201,7 @@ export const coffeeMenuItems: MenuItem[] = [
     price: "$9.50",
     badge: "Indulgent",
     description: "Twelve-hour Kyoto drip served over artisanal Tahitian vanilla gelato with bittersweet dark cocoa.",
-    image: "https://images.unsplash.com/photo-1517701604599-bb29b565090c?w=800&q=80",
+    image: "/images/menu/photo-1517701604599-bb29b565090c.jpg",
   },
   {
     id: "cd-6",
@@ -211,7 +211,7 @@ export const coffeeMenuItems: MenuItem[] = [
     notes: ["Japanese Yuzu", "Sparkling Spring Water", "Wild Thyme"],
     price: "$8.50",
     description: "Bright cold drip infused with sparkling citrus effervescence and aromatic alpine botanicals.",
-    image: "https://images.unsplash.com/photo-1508253578933-20b529302151?w=800&q=80",
+    image: "/images/menu/photo-1508253578933-20b529302151.jpg",
   },
   {
     id: "pas-1",
@@ -221,7 +221,7 @@ export const coffeeMenuItems: MenuItem[] = [
     price: "$6.50",
     badge: "Baked Fresh Daily",
     description: "Laminated slow-fermented sourdough pastry layered with rich Sicilian pistachio frangipane and ground green cardamom.",
-    image: "https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=800&q=80",
+    image: "/images/menu/photo-1555507036-ab1f4038808a.jpg",
   },
   {
     id: "pas-2",
@@ -231,7 +231,7 @@ export const coffeeMenuItems: MenuItem[] = [
     price: "$7.50",
     badge: "Chef Pairing",
     description: "Crisp black cocoa tart crust filled with bittersweet silk ganache, espresso caramel, and mineral salt flakes.",
-    image: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=800&q=80",
+    image: "/images/menu/photo-1606313564200-e75d5e30476c.jpg",
   },
   {
     id: "pas-3",
@@ -240,7 +240,7 @@ export const coffeeMenuItems: MenuItem[] = [
     notes: ["Browned Butter", "Tahitian Vanilla", "Toasted Almond"],
     price: "$5.50",
     description: "A traditional French almond teacake made with golden beurre noisette and aromatic vanilla bean caviar.",
-    image: "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800&q=80",
+    image: "/images/menu/photo-1509440159596-0249088772ff.jpg",
   },
   {
     id: "pas-4",
@@ -249,7 +249,7 @@ export const coffeeMenuItems: MenuItem[] = [
     notes: ["Ligurian Olive Oil", "Fresh Rosemary", "Whipped Coffee Butter"],
     price: "$6.00",
     description: "Warm, airy sourdough focaccia finished with flaky sea salt and served with whipped cultured coffee flower butter.",
-    image: "https://images.unsplash.com/photo-1586444248902-2f64eddc13df?w=800&q=80",
+    image: "/images/menu/photo-1586444248902-2f64eddc13df.jpg",
   },
   {
     id: "pas-5",
@@ -259,7 +259,7 @@ export const coffeeMenuItems: MenuItem[] = [
     price: "$6.50",
     badge: "House Specialty",
     description: "Traditional Breton layered pastry caramelized to golden crunchy perfection with Breton sea salt flakes.",
-    image: "https://images.unsplash.com/photo-1509365465985-25d11c17e812?w=800&q=80",
+    image: "/images/menu/photo-1509365465985-25d11c17e812.jpg",
   },
   {
     id: "pas-6",
@@ -268,7 +268,7 @@ export const coffeeMenuItems: MenuItem[] = [
     notes: ["Wild Mountain Berries", "Cardamom Glaze", "Heavy Cream"],
     price: "$5.50",
     description: "Tender cream scone bursting with wild berries and finished with crushed cardamom drizzle.",
-    image: "https://images.unsplash.com/photo-1587241321921-91a834d6d191?w=800&q=80",
+    image: "/images/menu/photo-1587241321921-91a834d6d191.jpg",
   },
 ];
 

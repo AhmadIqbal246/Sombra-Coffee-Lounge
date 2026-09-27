@@ -100,7 +100,17 @@ export function CoffeeMenuSection() {
                   </svg>
                 </Link>
                 <Link
-                  href="/booking"
+                  href="/#booking"
+                  onClick={(e) => {
+                    if (typeof window !== "undefined" && window.location.pathname === "/") {
+                      e.preventDefault();
+                      const el = document.getElementById("booking");
+                      if (el) {
+                        el.scrollIntoView({ behavior: "smooth" });
+                        window.history.pushState(null, "", "#booking");
+                      }
+                    }
+                  }}
                   className="group inline-flex items-center justify-center gap-2 rounded-xl border border-[color:var(--color-line)] bg-surface px-6 py-3.5 text-sm font-semibold text-text shadow-sm transition-all duration-300 hover:border-champagne/60 hover:bg-surface-raised sm:px-7"
                 >
                   <svg

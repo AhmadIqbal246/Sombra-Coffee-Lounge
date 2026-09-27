@@ -7,7 +7,7 @@ const navLinks = [
   { label: "Home", href: "/" },
   { label: "Coffee Menu", href: "/menu" },
   { label: "Philosophy", href: "/#why-choose-us" },
-  { label: "Reserve Table", href: "/booking" },
+  { label: "Reserve Table", href: "/#booking" },
 ];
 
 interface NavbarProps {
@@ -19,6 +19,23 @@ export function Navbar({ variant = "default" }: NavbarProps) {
   const closeMenu = () => setOpen(false);
   const isCinematic = variant === "cinematic";
   const shellClass = isCinematic ? "nav-cinematic" : "liquid-glass";
+
+  const handleBookingClick = (e: React.MouseEvent) => {
+    closeMenu();
+    if (typeof window !== "undefined" && window.location.pathname === "/") {
+      e.preventDefault();
+      const el = document.getElementById("booking");
+      if (el) {
+        if (window.location.hash === "#booking") {
+          window.dispatchEvent(new Event("hashchange"));
+        } else {
+          window.location.hash = "booking";
+        }
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
+
   return (
     <header className="pointer-events-none fixed inset-x-0 top-0 z-[70] px-6 pt-5 md:px-12 lg:px-16">
       <div className="pointer-events-auto">
@@ -37,6 +54,13 @@ export function Navbar({ variant = "default" }: NavbarProps) {
               <li key={link.label}>
                 <Link
                   href={link.href}
+                  onClick={(e) => {
+                    if (link.href === "/#booking") {
+                      handleBookingClick(e);
+                    } else {
+                      closeMenu();
+                    }
+                  }}
                   className="cursor-pointer text-sm font-medium text-muted transition-colors hover:text-text"
                 >
                   {link.label}
@@ -46,7 +70,8 @@ export function Navbar({ variant = "default" }: NavbarProps) {
           </ul>
           <div className="flex items-center gap-3">
             <Link
-              href="/booking"
+              href="/#booking"
+              onClick={handleBookingClick}
               className="hidden cursor-pointer rounded-lg bg-accent px-6 py-2 text-sm font-semibold text-white transition-colors hover:bg-jet lg:inline-flex shadow"
             >
               Reserve Table
@@ -77,7 +102,13 @@ export function Navbar({ variant = "default" }: NavbarProps) {
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    onClick={closeMenu}
+                    onClick={(e) => {
+                      if (link.href === "/#booking") {
+                        handleBookingClick(e);
+                      } else {
+                        closeMenu();
+                      }
+                    }}
                     className="block cursor-pointer rounded-lg px-3 py-3 text-sm font-medium text-text transition-colors hover:bg-surface-raised"
                   >
                     {link.label}
@@ -86,8 +117,8 @@ export function Navbar({ variant = "default" }: NavbarProps) {
               ))}
             </ul>
             <Link
-              href="/booking"
-              onClick={closeMenu}
+              href="/#booking"
+              onClick={handleBookingClick}
               className="mt-3 block cursor-pointer rounded-lg bg-accent px-4 py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-jet shadow"
             >
               Reserve Table

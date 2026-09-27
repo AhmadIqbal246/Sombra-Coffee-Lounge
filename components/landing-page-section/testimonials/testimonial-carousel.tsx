@@ -141,7 +141,7 @@ export function TestimonialCarousel({ testimonials }: TestimonialCarouselProps) 
           className="cursor-pointer rounded-lg bg-white px-8 py-3 text-sm font-medium text-black transition-colors hover:bg-gray-100"
           aria-label="See all testimonial cards"
         >
-          See More Cards
+          See More Reviews
         </button>
       </div>
     </div>
